@@ -9,13 +9,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ElasticSearchClientConfig {
 
-    //spring  <bean id="restHighLevelClient" class="RestHighLevelClient"/>
+    // spring  <bean id="restHighLevelClient" class="RestHighLevelClient"/>
     // <bean id="方法名" class="返回值类型"/>
     @Bean
     public RestHighLevelClient restHighLevelClient() {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("localhost", 9200, "http")));
+                        new HttpHost("localhost", 9200, "http")
+                )
+        );
         return client;
     }
 

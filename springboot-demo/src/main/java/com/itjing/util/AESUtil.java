@@ -1,4 +1,4 @@
-package com.itjing.utils;
+package com.itjing.util;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
@@ -39,7 +39,7 @@ public class AESUtil {
             cipher.init(Cipher.ENCRYPT_MODE, getSecretKey(password));
             // 加密
             byte[] result = cipher.doFinal(byteContent);
-            //通过Base64转码返回
+            // 通过Base64转码返回
             return Base64.encodeBase64String(result);
         } catch (Exception ex) {
             Logger.getLogger(AESUtil.class.getName()).log(Level.SEVERE, null, ex);
@@ -58,13 +58,13 @@ public class AESUtil {
     public static String decrypt(String content, String password) {
 
         try {
-            //实例化
+            // 实例化
             Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
 
-            //使用密钥初始化，设置为解密模式
+            // 使用密钥初始化，设置为解密模式
             cipher.init(Cipher.DECRYPT_MODE, getSecretKey(password));
 
-            //执行操作
+            // 执行操作
             byte[] result = cipher.doFinal(Base64.decodeBase64(content));
 
             return new String(result, "utf-8");

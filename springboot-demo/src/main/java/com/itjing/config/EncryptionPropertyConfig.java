@@ -1,6 +1,6 @@
 package com.itjing.config;
 
-import com.itjing.utils.AESUtil;
+import com.itjing.util.AESUtil;
 import com.ulisesbocchio.jasyptspringboot.EncryptablePropertyResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

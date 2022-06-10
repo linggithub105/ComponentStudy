@@ -20,3 +20,6 @@ async:
       # 配置线程池中的线程的名称前缀
       name:
         prefix: async-service-
+
+aspectlog:
+  enable: true

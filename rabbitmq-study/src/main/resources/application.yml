@@ -8,7 +8,15 @@ spring:
     host: 127.0.0.1
     port: 5672
     virtual-host: /
-    # \u624B\u52A8ack\u6D88\u606F
+    username: guest
+    password: guest
+    # 打开消息确认机制
+    publisher-confirm-type: correlated
+    # 打开消息返回
+    publisher-returns: true
+    template:
+      mandatory: true
+    # 手动ack消息
     listener:
       simple:
         acknowledge-mode: manual

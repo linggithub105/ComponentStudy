@@ -89,6 +89,8 @@
         <module>springboot-netty</module>
         <!-- ThreadLocal -->
         <module>springboot-threadlocal</module>
+        <!-- 自定义starter -->
+        <module>aspectlog-spring-boot-starter</module>
     </modules>
 
 </project>

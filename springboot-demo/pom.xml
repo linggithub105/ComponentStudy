@@ -82,6 +82,13 @@
             <artifactId>guava</artifactId>
             <version>29.0-jre</version>
         </dependency>
+
+        <!-- 自定义starter -->
+        <dependency>
+            <groupId>com.itjing</groupId>
+            <artifactId>aspectlog-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -7,7 +7,6 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +16,7 @@ import java.util.Map;
  * @date 2022年05月27日 10:05
  * @description 死信队列配置
  */
-@Configuration
+//@Configuration
 public class DeadLetterConfig {
 
     /* 正常配置 **********************************************************************************************************/

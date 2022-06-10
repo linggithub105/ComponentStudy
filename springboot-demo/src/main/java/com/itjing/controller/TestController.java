@@ -1,6 +1,7 @@
 package com.itjing.controller;
 
 import com.itjing.entity.CheckBatch;
+import com.itjing.log.annotation.AspectLog;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import java.util.Map;
 public class TestController {
 
     @PostMapping("/auth/login")
+    @AspectLog
     public Map<String, Object> login() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
@@ -28,6 +30,7 @@ public class TestController {
     }
 
     @GetMapping("/auth/info")
+    @AspectLog
     public Map<String, Object> info() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
