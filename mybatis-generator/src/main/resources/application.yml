@@ -80,3 +80,9 @@ logging:
 key-code: eiruewifmskru3
 
 
+# 项目相关配置
+itjing:
+  # 文件路径
+  profile: C:/uploadPath/profile
+
+

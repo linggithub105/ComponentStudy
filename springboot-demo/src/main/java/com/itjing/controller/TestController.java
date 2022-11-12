@@ -1,7 +1,8 @@
 package com.itjing.controller;
 
+import com.itjing.annotation.AutoLog;
 import com.itjing.entity.CheckBatch;
-import com.itjing.log.annotation.AspectLog;
+import com.itjing.enu.LogType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,8 @@ import java.util.Map;
 public class TestController {
 
     @PostMapping("/auth/login")
-    @AspectLog
+//    @AspectLog
+    @AutoLog(value = "登录", logType = LogType.login)
     public Map<String, Object> login() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);
@@ -30,7 +32,8 @@ public class TestController {
     }
 
     @GetMapping("/auth/info")
-    @AspectLog
+//    @AspectLog
+    @AutoLog(value = "查询用户信息", logType = LogType.query)
     public Map<String, Object> info() {
         Map<String, Object> map = new HashMap<>();
         map.put("code", 200);

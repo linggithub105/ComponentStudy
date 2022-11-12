@@ -1,0 +1,56 @@
+# 读写分离
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  shardingsphere:
+    datasource:
+      ds:
+        maxPoolSize: 100
+      # master-ds1数据库连接信息
+      ds1:
+        driver-class-name: com.mysql.jdbc.Driver
+        maxPoolSize: 100
+        minPoolSize: 5
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://192.168.56.111:3306/sharding-jdbc-db?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+      # slave-ds2数据库连接信息
+      ds2:
+        driver-class-name: com.mysql.jdbc.Driver
+        maxPoolSize: 100
+        minPoolSize: 5
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://192.168.56.111:3307/sharding-jdbc-db?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+      # slave-ds3数据库连接信息
+      ds3:
+        driver-class-name: com.mysql.jdbc.Driver
+        minPoolSize: 5
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://192.168.56.111:3307/sharding-jdbc-db?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+      # 配置数据源
+      names: ds1,ds2,ds3
+    masterslave:
+      # 配置slave节点的负载均衡均衡策略,采用轮询机制
+      load-balance-algorithm-type: round_robin
+      # 配置主库master,负责数据的写入
+      master-data-source-name: ds1
+      # 配置主从名称
+      name: ms
+      # 配置从库slave节点
+      slave-data-source-names: ds2,ds3
+    # 显示sql
+    props:
+      sql:
+        show: true
+    # 配置默认数据源ds1 默认数据源,主要用于写
+    sharding:
+      default-data-source-name: ds1
+
+# 整合mybatis的配置
+mybatis:
+  type-aliases-package: com.itjing.sharding.entity

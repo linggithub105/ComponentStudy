@@ -1,0 +1,9 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: springboot-security
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml

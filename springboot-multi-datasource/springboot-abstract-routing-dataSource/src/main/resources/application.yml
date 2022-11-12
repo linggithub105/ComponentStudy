@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    db1:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/db01?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT&useSSL=false
+      username: root
+      password: root
+    db2:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/db02?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT&useSSL=false
+      username: root
+      password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itjing.multi.mapper.db1.TestDB1Mapper">
+
+<select id="selectDB1" resultType="java.util.Map">
+  select * from dept
+</select>
+</mapper>

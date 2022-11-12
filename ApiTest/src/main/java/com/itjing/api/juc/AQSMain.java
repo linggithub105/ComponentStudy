@@ -1,24 +1,33 @@
 package com.itjing.api.juc;
 
-import org.apache.commons.collections.list.SynchronizedList;
 import org.junit.Test;
 
-import java.lang.reflect.Field;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.TimeUnit;
 
 public class AQSMain {
+
+
+
     @Test
     public void testQueue() throws InterruptedException, NoSuchFieldException, IllegalAccessException {
-        CountDownLatch countDownLatch = new CountDownLatch(10);
+        new Thread(()->{
+            CountDownLatch countDownLatch = new CountDownLatch(10);
+            for (int i = 0; i < 10; i++) {
+                RunThread runThread = new RunThread(countDownLatch);
+                new Thread(runThread).start();
+            }
+            try {
+                countDownLatch.await();
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName());
+        }).start();
+        TimeUnit.SECONDS.sleep(10);
+        System.out.println("主线程.............");
 
-
-        for (int i = 0; i < 10; i++) {
-            RunThread runThread = new RunThread(countDownLatch);
-            new Thread(runThread).start();
-        }
-        countDownLatch.await();
-        System.out.println();
     }
 
     static class RunThread implements Runnable{
@@ -31,7 +40,7 @@ public class AQSMain {
         @Override
         public void run() {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(6000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

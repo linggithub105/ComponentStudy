@@ -1,0 +1,26 @@
+logging: # 打印sql
+  level:
+    com.itjing.multi.mapper.db1: debug
+    com.itjing.multi.mapper.db2: debug
+spring:
+  datasource: # 数据源配置
+    type: com.alibaba.druid.pool.DruidDataSource
+    db1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      initialize: true # 指定初始化数据源，是否用data.sql来初始化，默认: true
+      name: db1
+      # 本地开发环境配置db1
+      url: jdbc:mysql://127.0.0.1:3306/db01?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT&useSSL=false
+      username: root
+      password: root
+    db2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      initialize: true # 指定初始化数据源，是否用data.sql来初始化，默认: true
+      name: db2
+      # 本地开发环境配置db2
+      url: jdbc:mysql://127.0.0.1:3306/db02?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT&useSSL=false
+      username: root
+      password: root
+

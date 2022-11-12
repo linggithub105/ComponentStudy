@@ -1,6 +1,6 @@
 package com.itjing.utilstudy.utils;
 
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 
 import java.io.*;
 import java.net.URL;
@@ -77,10 +77,9 @@ public class DownloadImgUtil {
 
     public static void download(List<String> urls) {
         for (String imgUrl : urls) {
-            if (StringUtils.isEmpty(imgUrl)) {
+            if (ObjectUtils.isEmpty(imgUrl)) {
                 continue;
             }
-            System.out.println(imgUrl);
             try {
                 String fileName = imgUrl.substring(imgUrl.lastIndexOf("/"));
                 String savePath = "E:\\workspace_idea\\ComponentStudy\\utilstudy\\download\\";

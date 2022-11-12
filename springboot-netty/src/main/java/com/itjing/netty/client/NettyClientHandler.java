@@ -21,6 +21,8 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 
     private Map<String, Object> response = new HashMap<>();
 
+    private String logPageName = null;
+
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         log.info("客户端Active .....");

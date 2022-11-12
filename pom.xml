@@ -91,6 +91,40 @@
         <module>springboot-threadlocal</module>
         <!-- 自定义starter -->
         <module>aspectlog-spring-boot-starter</module>
+        <!-- spring-security 整合 jwt -->
+        <module>spring-security-jwt</module>
+        <!-- springboot + minio 实现文件上传 -->
+        <module>springboot-minio</module>
+        <!-- springboot 多数据源配置使用 -->
+        <!-- 其下讲述了3种方式 -->
+<!--        <module>springboot-multi-datasource</module>-->
+        <!-- springboot + sharding-jdbc -->
+        <module>springboot-sharding-jdbc</module>
+        <!-- 杂用 -->
+        <module>springboot-test</module>
+        <!-- springboot + swagger3 -->
+        <module>springboot-swagger3</module>
+        <module>swagger_study</module>
+        <!-- springboot + easyexcel -->
+        <module>springboot-easyexcel</module>
+        <!-- springboot + flowable -->
+        <module>springboot-flowable</module>
+        <!-- springboot-mysql -->
+        <module>springboot-mysql</module>
+        <!-- springboot-thread -->
+        <module>springboot-thread</module>
+        <!-- springboot-neo4j -->
+        <module>springboot-neo4j</module>
+        <!-- springboot-activiti< -->
+        <module>springboot-activiti</module>
+        <!-- springboot-json -->
+        <module>springboot-json</module>
+        <!-- springboot-security -->
+        <module>springboot-security</module>
+        <!-- springboot-api -->
+        <module>springboot-api</module>
+        <!-- springboot-sensitive -->
+        <module>springboot-sensitive</module>
     </modules>
 
 </project>

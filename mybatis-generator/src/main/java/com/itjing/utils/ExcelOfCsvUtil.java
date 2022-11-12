@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 
 /**
@@ -24,7 +23,7 @@ public class ExcelOfCsvUtil {
 
     public static void main(String[] args) throws FileNotFoundException {
         // csv文件地址
-        List<String> strs = readCsv(null);
+        /*List<String> strs = readCsv(null);
         strs.stream().forEach(str -> {
             // 一般是逗号分隔的
             String[] field = str.split(",");
@@ -32,7 +31,9 @@ public class ExcelOfCsvUtil {
                 System.out.print(data + "\t");
             });
             System.out.println();
-        });
+        });*/
+        String splitStr = new String(new char[]{0x1D});
+        System.out.println(splitStr);
     }
 
     private static List<String> readCsv(InputStream inputStream) {

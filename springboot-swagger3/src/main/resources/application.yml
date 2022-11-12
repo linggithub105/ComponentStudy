@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: springboot-swagger3
+server:
+  port: 8888
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0.0
+  application-description: springboot + swagger 3.0 整合Demo
+  try-host: http://localhost:${server.port}
+  author: lijing
+  url: https://www.xiaojingge.com
+  email: 2427259171@qq.com

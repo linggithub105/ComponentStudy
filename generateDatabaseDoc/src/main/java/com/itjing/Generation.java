@@ -56,7 +56,7 @@ public class Generation {
 
         //设置生成pojo相关配置
         Configuration config = Configuration.builder()
-                .version("1.0.0")
+                .version("2022.07.05")
                 .description("数据库设计文档")
                 .dataSource(dataSource)
                 .engineConfig(engineConfig)

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: springboot-minio
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 200MB
+
+server:
+  port: 8888
+
+minio:
+  endpoint: http://192.168.56.111:9001
+  accessKey: minio
+  secretKey: minio@123456
+  nginxHost: http://file.xiaojingge.com
+  bucketName: my-bucket

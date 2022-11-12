@@ -181,7 +181,6 @@ public class FileUploadService {
         // 日期目录
         // 注意，这里虽然写成这种固定获取日期目录的形式，逻辑上确实存在问题，但是实际上，filePath的日期目录应该是从数据库查询的
         String filePath = new DateTime().toString("yyyy/MM/dd");
-
         try {
             /**
              * 注意：在实际项目中，不需要删除OSS文件服务器中的文件，
