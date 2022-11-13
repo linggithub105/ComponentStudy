@@ -3,7 +3,7 @@ package com.itjing.juc.add;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author lijing
+ * @author zhanling.li
  * @Description 计数器
  * @create 2020-11-20 18:49
  */
