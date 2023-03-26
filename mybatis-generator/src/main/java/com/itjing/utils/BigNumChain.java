@@ -19,6 +19,7 @@ public class BigNumChain {
 
     /**
      * 开始计算的初始值
+     *
      * @param value
      * @return
      */
@@ -28,6 +29,7 @@ public class BigNumChain {
 
     /**
      * 加
+     *
      * @param other
      * @return
      */
@@ -37,6 +39,7 @@ public class BigNumChain {
 
     /**
      * 加
+     *
      * @param other
      * @param beforeOperteScale 加之前先把 other 四舍五入法保留 beforeOperteScale 位小数
      * @return
@@ -47,6 +50,7 @@ public class BigNumChain {
 
     /**
      * 减
+     *
      * @param other
      * @return
      */
@@ -56,6 +60,7 @@ public class BigNumChain {
 
     /**
      * 减
+     *
      * @param other
      * @param beforeOperteScale 减之前先把 other 四舍五入法保留 beforeOperteScale 位小数
      * @return
@@ -66,6 +71,7 @@ public class BigNumChain {
 
     /**
      * 乘
+     *
      * @param other
      * @return
      */
@@ -75,6 +81,7 @@ public class BigNumChain {
 
     /**
      * 乘
+     *
      * @param other
      * @param beforeOperteScale 乘之前先把 other 四舍五入法保留 beforeOperteScale 位小数
      * @return
@@ -85,14 +92,17 @@ public class BigNumChain {
 
     /**
      * 除以
+     *
      * @param other
      * @return
      */
     public BigNumChain divide(Object other) {
         return operator(BigDecimal::divide, other);
     }
+
     /**
      * 除以
+     *
      * @param other
      * @param beforeOperteScale 除之前先把 other 四舍五入法保留 beforeOperteScale 位小数
      * @return
@@ -103,6 +113,7 @@ public class BigNumChain {
 
     /**
      * 除以
+     *
      * @param other
      * @param scale 结果保留 scale 位小数
      * @return
@@ -113,8 +124,9 @@ public class BigNumChain {
 
     /**
      * 除以
+     *
      * @param other
-     * @param scale 结果保留 scale 位小数
+     * @param scale             结果保留 scale 位小数
      * @param beforeOperteScale 除以之前先把 other 四舍五入法保留 beforeOperteScale 位小数
      * @return
      */
@@ -126,6 +138,7 @@ public class BigNumChain {
     public BigDecimal getValue() {
         return value;
     }
+
     public BigDecimal getValue(int scale) {
         return value.setScale(scale, BigDecimal.ROUND_HALF_UP);
     }
@@ -137,9 +150,11 @@ public class BigNumChain {
     public Double getDouble(int scale) {
         return getValue(scale).doubleValue();
     }
+
     public Long getLong() {
         return getValue().longValue();
     }
+
     public Integer getInteger() {
         return getValue().intValue();
     }
@@ -147,9 +162,11 @@ public class BigNumChain {
     private BigNumChain operator(BiFunction<BigDecimal, BigDecimal, BigDecimal> operator, Object other) {
         return operator(operator, other, null);
     }
+
     private BigNumChain operator(BiFunction<BigDecimal, BigDecimal, BigDecimal> operator, Object other, Integer beforeOperteScale) {
         return baseOperator(otherValue -> operator.apply(this.value, otherValue), other, beforeOperteScale);
     }
+
     private synchronized BigNumChain baseOperator(Function<BigDecimal, BigDecimal> operatorFunction, Object other, Integer beforeOperteScale) {
         if (other == null) {
             return this;
@@ -183,15 +200,4 @@ public class BigNumChain {
         return res;
     }
 
-
-    public static void main(String[] args) {
-        Double num1 = BigNumChain.startOf(null).getDouble();
-        System.out.println(num1);
-
-        Double num2 = BigNumChain.startOf(null).add(2).subtract(3).getDouble();
-        System.out.println(num2);
-
-        Double num3 = BigNumChain.startOf(null).add(2.1).subtract(1.23).getDouble();
-        System.out.println(num3);
-    }
 }

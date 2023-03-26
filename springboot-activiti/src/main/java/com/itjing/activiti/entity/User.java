@@ -27,6 +27,7 @@ public class User implements UserDetails {
     // 用户所有权限
     private List<GrantedAuthority> authorities = new ArrayList<>();
 
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
         return authorities;
