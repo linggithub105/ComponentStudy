@@ -21,7 +21,6 @@ public class AsyncServiceImpl implements AsyncService {
     public void executeAsync() {
         log.info("start executeAsync");
         // 异步线程可以在这里执行操作比较耗时的事情 TODO
-        //
 
         log.info("do something......");
         try {
