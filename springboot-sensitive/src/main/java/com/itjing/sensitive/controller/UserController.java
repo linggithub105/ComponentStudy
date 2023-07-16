@@ -1,8 +1,9 @@
-package com.itjing.sensitive.annotation.controller;
+package com.itjing.sensitive.controller;
 
 import com.itjing.sensitive.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,12 @@ public class UserController {
         list.add(new User(1L, "lijing", 18, "2427259171@qq.com"));
         return list;
     }
+
+    @PostMapping("/login")
+    public String login(String username, String password) {
+        log.info(username + "," + password);
+        return "success";
+    }
+
 
 }
